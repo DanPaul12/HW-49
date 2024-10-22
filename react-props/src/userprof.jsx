@@ -4,6 +4,7 @@ class UserProfile extends Component {
     constructor(props) {
         super(props);
         this.state = { name: 'Alex' };
+        this.changeName = this.changeName.bind(this)
     }
 
     // Incorrect function

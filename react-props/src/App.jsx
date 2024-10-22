@@ -1,3 +1,4 @@
+import MoviesList from "./movieslist"
 import UserProfile from "./userprof"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <UserProfile />
+      <MoviesList />
     </>
   )
 }
