@@ -7,7 +7,7 @@ const MoviesList = () => {
                                         {title: 'Independence Day', details: 'Released July 4, 1999'},
                                         {title: 'Black Panther', details: 'Released January 23, 2021'},
     ])
-    const [showAbout, setShowAbout] = useState(true)
+    const [showAbout, setShowAbout] = useState(false)
 
     const toggleAbout = () => setShowAbout(!showAbout)
 
@@ -18,10 +18,11 @@ const MoviesList = () => {
             <ul>
                 {/* Map through the movies and display them */}
                 {movies.map((movie, index)=> (
-                    <li key = {index} onClick={toggleAbout()}> {movie.title} {showAbout && movie.details}<button className='remove'>Remove</button> </li>
+                    <li key = {index} onClick={toggleAbout}> {movie.title} {showAbout && movie.details} <button className='remove'>Remove</button> </li>
                 ))}
             </ul>
         </div>
     );
 };
+
 export default MoviesList;
