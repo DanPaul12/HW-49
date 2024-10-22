@@ -13,7 +13,8 @@ const MoviesList = () => {
     }
     const removeMovie = (index1) => {
         const filterMovie = movies.filter(movie => movie.index !== index1 )
-        setMovies(filterMovie)}
+        setMovies(filterMovie)
+    }
 
     return (
         <div>
