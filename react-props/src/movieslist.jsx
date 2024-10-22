@@ -9,6 +9,8 @@ const MoviesList = () => {
     ])
     const [showAbout, setShowAbout] = useState(true)
 
+    const toggleAbout = () => setShowAbout(!showAbout)
+
     return (
         <div>
             <h2>Movie List: </h2>
@@ -16,7 +18,7 @@ const MoviesList = () => {
             <ul>
                 {/* Map through the movies and display them */}
                 {movies.map((movie, index)=> (
-                    <li> {key = {index}> movie.title} <button className='remove'>Remove</button> </li>
+                    <li key = {index} onClick={toggleAbout()}> {movie.title} {showAbout && movie.details}<button className='remove'>Remove</button> </li>
                 ))}
             </ul>
         </div>
