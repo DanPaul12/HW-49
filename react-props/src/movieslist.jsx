@@ -23,7 +23,7 @@ const MoviesList = () => {
             <ul>
                 {/* Map through the movies and display them */}
                 {movies.map((movie, index)=> (
-                    <li key = {index} onClick={() => toggleAbout(index)}> {movie.title} -- {movie.showAbout && movie.details} <button className='remove' onClick={() => removeMovie(index)}>Remove</button> </li>
+                    <li key = {index} > {movie.title} -- {movie.showAbout && movie.details} <button className='toggle' onClick={() => toggleAbout(index)}>Show Release Date</button><button className='remove' onClick={() => removeMovie(index)}>Remove</button> </li>
                 ))}
             </ul>
         </div>
