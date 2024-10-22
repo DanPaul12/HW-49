@@ -10,7 +10,7 @@ const MoviesList = () => {
             {/* Toggle view button */}
             <ul>
                 {/* Map through the movies and display them */}
-                {movies.map((movie, index)=> (
+                {movies.map((movie)=> (
                     <li>{movie}</li>
                 ))}
             </ul>
