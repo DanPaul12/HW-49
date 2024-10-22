@@ -1,3 +1,5 @@
+import { Component } from "react";
+
 class UserProfile extends Component {
     constructor(props) {
         super(props);
@@ -6,7 +8,7 @@ class UserProfile extends Component {
 
     // Incorrect function
     changeName() {
-        this.state.name = 'Charlie';
+        this.setState({ name: 'Charlie'});
     }
 
     render() {
