@@ -7,12 +7,15 @@ const MoviesList = () => {
                                         {title: 'Independence Day', details: 'Released July 4, 1999', showAbout: false, genre: 'action'},
                                         {title: 'Black Panther', details: 'Released January 23, 2021', showAbout: false, genre: 'action'},
     ])
-    const toggleAbout = (index1) => {
-        const setShowAbout = movies.map((movie, index2) => index1 === index2 ? {...movie, showAbout:!movie.showAbout}: movie)
+
+
+    const toggleAbout = (title) => {
+        const setShowAbout = movies.map((movie) => movie.title === title ? {...movie, showAbout: !movie.showAbout}: movie)
         setMovies(setShowAbout)
     }
-    const removeMovie = (index1) => {
-        const filterMovie = movies.filter(movie => movie.index !== index1 )
+
+    const removeMovie = (title) => {
+        const filterMovie = movies.filter((movie) => movie.title !== title)
         setMovies(filterMovie)
     }
 
@@ -22,8 +25,10 @@ const MoviesList = () => {
             {/* Toggle view button */}
             <ul>
                 {/* Map through the movies and display them */}
-                {movies.map((movie, index)=> (
-                    <li key = {index} > {movie.title} -- {movie.showAbout && movie.details} <button className='toggle' onClick={() => toggleAbout(index)}>Show Release Date</button><button className='remove' onClick={() => removeMovie(index)}>Remove</button> </li>
+                {movies.map((movie)=> (
+                    <li key = {movie.title} > {movie.title} -- {movie.showAbout && movie.details} 
+                    <button className='toggle' onClick={() => toggleAbout(movie.title)}>Show Release Date</button>
+                    <button className='remove' onClick={() => removeMovie(movie.title)}>Remove</button> </li>
                 ))}
             </ul>
         </div>
