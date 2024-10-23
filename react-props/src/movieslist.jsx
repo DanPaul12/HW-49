@@ -19,6 +19,20 @@ const MoviesList = () => {
         setMovies(filterMovie)
     }
 
+    const [condition, Setcondition] = useState(true)
+
+    const actionMovies = (genre) => {
+        const filterMovies = movies.filter((movie)=> movie.genre === genre)
+        setMovies(filterMovies)
+        Setcondition(!condition)
+    }
+
+    const allMovies = () => {
+        const allMovies = movies.map((movie) => movie === movie)
+        setMovies(allMovies)
+        Setcondition(!condition)
+    }
+
     return (
         <div>
             <h2>Movie List: </h2>
@@ -31,6 +45,7 @@ const MoviesList = () => {
                     <button className='remove' onClick={() => removeMovie(movie.title)}>Remove</button> </li>
                 ))}
             </ul>
+            <button className='Action' onClick={condition ? () => actionMovies('action') : () => allMovies()}>Action Movies</button>
         </div>
     );
 };
