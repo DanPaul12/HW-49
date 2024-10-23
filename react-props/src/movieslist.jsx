@@ -25,12 +25,17 @@ const MoviesList = () => {
         const filterMovies = movies.filter((movie)=> movie.genre === genre)
         setMovies(filterMovies)
         Setcondition(!condition)
+        console.log(condition)
     }
 
     const allMovies = () => {
-        const allMovies = movies.map((movie) => movie === movie)
-        setMovies(allMovies)
+            setMovies([{title: 'Gilbert Grape', details: 'Released June 1, 1993', showAbout: false, genre: 'sadboi'},
+            {title: 'Independence Day', details: 'Released July 4, 1999', showAbout: false, genre: 'action'},
+            {title: 'Black Panther', details: 'Released January 23, 2021', showAbout: false, genre: 'action'},
+            ])
+        console.log(movies)
         Setcondition(!condition)
+        console.log(condition)
     }
 
     return (
@@ -45,7 +50,7 @@ const MoviesList = () => {
                     <button className='remove' onClick={() => removeMovie(movie.title)}>Remove</button> </li>
                 ))}
             </ul>
-            <button className='Action' onClick={condition ? () => actionMovies('action') : () => allMovies()}>Action Movies</button>
+            <button className='Action' onClick={condition ? () => actionMovies('action') : () => allMovies()}>{condition ? 'Action Movies' : 'All Movies'}</button>
         </div>
     );
 };
