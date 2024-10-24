@@ -25,7 +25,6 @@ const MoviesList = () => {
         const filterMovies = movies.filter((movie)=> movie.genre === genre)
         setMovies(filterMovies)
         Setcondition(!condition)
-        console.log(condition)
     }
 
     const allMovies = () => {
@@ -33,9 +32,7 @@ const MoviesList = () => {
             {title: 'Independence Day', details: 'Released July 4, 1999', showAbout: false, genre: 'action'},
             {title: 'Black Panther', details: 'Released January 23, 2021', showAbout: false, genre: 'action'},
             ])
-        console.log(movies)
         Setcondition(!condition)
-        console.log(condition)
     }
 
     return (
